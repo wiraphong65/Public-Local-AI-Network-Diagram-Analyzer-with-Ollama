@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   Clock,
   Trash2,
-  Eye,
   Search,
   RefreshCw,
   Archive,
@@ -239,7 +238,10 @@ const HistoryTab: React.FC<HistoryTabProps> = ({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.02 }}
                 >
-                  <Card className="p-4 hover:shadow-sm transition-shadow border-gray-200">
+                  <Card 
+                    className="p-4 hover:shadow-md transition-all duration-200 border-gray-200 cursor-pointer hover:bg-gray-50"
+                    onClick={() => handleViewResult(item)}
+                  >
                     <div className="flex items-start justify-between">
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-2">
@@ -269,15 +271,10 @@ const HistoryTab: React.FC<HistoryTabProps> = ({
                           <Button
                             variant="outline"
                             size="sm"
-                            onClick={() => handleViewResult(item)}
-                          >
-                            <Eye className="w-3 h-3 mr-1" />
-                            ดู
-                          </Button>
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={() => handleCopyToClipboard(item.analysis_result || '')}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleCopyToClipboard(item.analysis_result || '');
+                            }}
                             className="text-blue-600 hover:text-blue-700 border-blue-200 hover:bg-blue-50"
                           >
                             <Copy className="w-3 h-3 mr-1" />
@@ -286,7 +283,10 @@ const HistoryTab: React.FC<HistoryTabProps> = ({
                           <Button
                             variant="outline"
                             size="sm"
-                            onClick={() => historyState.handleDeleteHistoryItem(item)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              historyState.handleDeleteHistoryItem(item);
+                            }}
                             disabled={historyState.deletingId === item.id}
                             className="text-red-600 hover:text-red-700"
                           >
