@@ -690,37 +690,7 @@ Local-AI-Network-Diagram-Analyzer-with-Ollama/
 └── 📄 README.md              # This file
 ```
 
-### 🤝 การมีส่วนร่วม
 
-1. Fork repository
-2. สร้าง feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit การเปลี่ยนแปลง (`git commit -m 'Add amazing feature'`)
-4. Push ไป branch (`git push origin feature/amazing-feature`)
-5. เปิด Pull Request
-
----
-
-## 📞 การติดต่อและสนับสนุน
-
-### 🐛 รายงานปัญหา
-- **GitHub Issues**: [สร้าง issue ใหม่](https://github.com/wiraphong65/Local-AI-Network-Diagram-Analyzer-with-Ollama/issues)
-- **Email**: wiraphong65@example.com
-
-### 📖 เอกสารเพิ่มเติม
-- **API Docs**: http://localhost:8007/docs (เมื่อรัน backend)
-- **DFD Analysis**: [docs/DFD_Analysis.md](docs/DFD_Analysis.md)
-- **System Architecture**: [docs/DFD_Visual.md](docs/DFD_Visual.md)
-
-### ⭐ การให้คะแนน
-หากคุณชอบโปรเจกต์นี้ กรุณาให้ ⭐ บน GitHub!
-
----
-
-## 📄 License
-
-MIT License - ดู [LICENSE](LICENSE) สำหรับรายละเอียด
-
----
 
 <div align="center">
 
