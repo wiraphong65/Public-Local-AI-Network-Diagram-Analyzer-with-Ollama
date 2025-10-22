@@ -72,7 +72,7 @@ ollama pull codellama
 #### 2️⃣ Clone โปรเจกต์
 
 ```bash
-git clone https://github.com/wiraphong65/-Public--Local-AI-Network-Diagram-Analyzer-with-Ollama.git
+git clone https://github.com/wiraphong65/Public-Local-AI-Network-Diagram-Analyzer-with-Ollama.git
 cd Local-AI-Network-Diagram-Analyzer-with-Ollama
 ```
 
