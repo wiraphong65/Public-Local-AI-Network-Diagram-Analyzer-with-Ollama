@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sonner toast custom styles */
+.toaster [data-sonner-toast] {
+  max-width: 320px !important; /* ลดจาก 400px เป็น 320px */
+  min-height: auto !important;
+  padding: 12px 20px !important; /* ลดจาก 16px 24px เป็น 12px 20px */
+  font-size: 14px !important; /* ลดจาก 16px เป็น 14px */
+  border-radius: 10px !important; /* ลดจาก 12px เป็น 10px */
+  font-weight: 500 !important;
+  border: 2px solid !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.toaster [data-sonner-toast] [data-content] {
+  max-width: 280px !important; /* ลดจาก 360px เป็น 280px */
+  font-size: 14px !important; /* ลดจาก 16px เป็น 14px */
+  line-height: 1.4 !important; /* ลดจาก 1.5 เป็น 1.4 */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  color: white !important;
+}
+
+/* เพิ่มขนาด icon ใน toast */
+.toaster [data-sonner-toast] [data-icon] {
+  width: 16px !important; /* ลดจาก 20px เป็น 16px */
+  height: 16px !important;
+  color: white !important;
+}
+
+/* เพิ่มขนาด close button และปรับสี */
+.toaster [data-sonner-toast] [data-close-button] {
+  width: 20px !important; /* ลดจาก 24px เป็น 20px */
+  height: 20px !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: color 0.2s ease !important;
+}
+
+.toaster [data-sonner-toast] [data-close-button]:hover {
+  color: white !important;
+}
+
+/* เพิ่ม animation สำหรับ toast */
+.toaster [data-sonner-toast] {
+  animation: slideIn 0.3s ease-out !important;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ปรับแต่ง hover effect */
+.toaster [data-sonner-toast]:hover {
+  transform: translateY(-2px) !important;
+  transition: transform 0.2s ease !important;
+}
+
+/* สีเฉพาะสำหรับแต่ละประเภท */
+.toaster [data-sonner-toast][data-type="success"] {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  border-color: #047857 !important;
+}
+
+.toaster [data-sonner-toast][data-type="error"] {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  border-color: #b91c1c !important;
+}
+
+.toaster [data-sonner-toast][data-type="info"] {
+  background: linear-gradient(135deg, #3b82f6, #2563eb) !important;
+  border-color: #1d4ed8 !important;
+}
+
+.toaster [data-sonner-toast][data-type="warning"] {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  border-color: #b45309 !important;
+}

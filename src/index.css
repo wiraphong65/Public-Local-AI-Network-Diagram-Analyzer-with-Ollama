@@ -1,0 +1,200 @@
+@font-face {
+  font-family: 'Prompt';
+  src: url('./font/Mitr,Prompt/Prompt/Prompt-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Prompt', sans-serif;
+  }
+}
+
+/* Set Prompt as default font for entire system */
+* {
+  font-family: 'Prompt', sans-serif;
+}
+
+body {
+  font-family: 'Prompt', sans-serif;
+}
+
+/* ReactFlow Performance Optimizations */
+.react-flow {
+  background-color: #f8fafc;
+}
+
+.react-flow__node {
+  transition: none !important;
+  will-change: transform;
+}
+
+.react-flow__edge {
+  transition: none !important;
+  will-change: transform;
+}
+
+.react-flow__handle {
+  transition: none !important;
+}
+
+.react-flow__connection-line {
+  transition: none !important;
+}
+
+/* Hide React Flow attribution */
+.react-flow__attribution {
+  display: none !important;
+}
+
+/* Prevent ghost images during drag */
+.react-flow__node.dragging {
+  opacity: 0.8;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* Optimize rendering for better performance */
+.react-flow__viewport {
+  will-change: transform;
+}
+
+.react-flow__pane {
+  will-change: transform;
+}
+
+/* Fix for overlapping nodes during drag */
+.react-flow__node.selected {
+  z-index: 10;
+}
+
+.react-flow__node.dragging {
+  z-index: 1000;
+}
+
+/* Disable transitions during drag operations */
+.react-flow__node.dragging * {
+  transition: none !important;
+}
+
+/* Optimize edge rendering */
+.react-flow__edge-path {
+  transition: none !important;
+}
+
+/* Prevent text selection during drag */
+.react-flow__pane {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Prevent text selection and drag on the entire app */
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+/* Allow text selection only in specific areas */
+input, textarea, [contenteditable="true"] {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+}
+
+/* Prevent drag and drop on images and other elements */
+img, svg, canvas {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  pointer-events: none;
+}
+
+/* Allow pointer events for interactive elements */
+button, a, [role="button"], [tabindex] {
+  pointer-events: auto;
+}
+
+/* Prevent context menu on right click */
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Lighter placeholder color for all inputs */
+input::placeholder, textarea::placeholder {
+  color: hsl(var(--muted-foreground) / 0.5) !important;
+  opacity: 1 !important;
+}
